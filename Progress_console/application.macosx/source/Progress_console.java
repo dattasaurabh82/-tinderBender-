@@ -4,6 +4,7 @@ import processing.event.*;
 import processing.opengl.*; 
 
 import controlP5.*; 
+import java.io.*; 
 import processing.net.*; 
 
 import java.util.HashMap; 
@@ -17,6 +18,8 @@ import java.io.IOException;
 
 public class Progress_console extends PApplet {
 
+
+// Import the net libraries
 
 
 

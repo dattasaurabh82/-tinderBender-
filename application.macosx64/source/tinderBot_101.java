@@ -11,6 +11,7 @@ import http.requests.*;
 import rekognition.faces.*; 
 import com.temboo.core.*; 
 import com.temboo.Library.Tumblr.Post.*; 
+import processing.serial.*; 
 
 import java.util.HashMap; 
 import java.util.ArrayList; 
@@ -82,9 +83,23 @@ boolean glass_resultant = true;
 String[] encodedFileData = null;
 String sringbase64 = "";
 
+///////
+
+
+Serial myPort ;
+String port;
+///////
+
 
 public void setup() {
   size(1280, 720);
+
+  /////
+  String[] SerialPort = Serial.list();
+  println(SerialPort);
+  myPort = new Serial(this, SerialPort[5], 9600);
+  myPort.bufferUntil('\n');
+  /////
 
   //frame.setIconImage(titlebaricon.getImage());
 
@@ -301,10 +316,10 @@ public void draw() {
     //println("Just the previous frame loaded");
     s.write("Just the previous frame loaded" + "\n");
     s.write("--------DONE ONE SESSION-------" + "\n");
-    
+
     //Convert the image to base64
     base64Encoding();
-    
+
     //s.write(" " + "\n\n\n");
     event = 4;
   } else if (event == 2) {
@@ -657,6 +672,9 @@ public void analysedImage() {
         fill(255);
         text("Age criterion is also matched after this", 10, (height/2)+20 );
         text("Accept Her", 10, (height/2)+30 );
+        //
+        myPort.write('3');
+        //
         //generalResultant = true;
       } else if (age_resultant == false) {// if it doesn't then give machine a random choice to make a selection
         //println("But age criterion didn't match under this 1st preference");
@@ -680,6 +698,9 @@ public void analysedImage() {
           s.write("Accept her" + "\n");
           fill(255);
           text("Accept her", 10, (height/2)+40 );
+          //
+          myPort.write('3');
+          //
           v = 0;
           //generalResultant = true;
         } else {
@@ -689,6 +710,9 @@ public void analysedImage() {
           s.write("Reject her" + "\n");
           fill(255);
           text("Reject her", 10, (height/2)+40 );
+          //
+          myPort.write('2');
+          //
           //generalResultant = false;
         }
       }
@@ -700,6 +724,9 @@ public void analysedImage() {
       fill(255);
       text("Golden Ratio criterion doesn't match at the first place", 10, (height/2)+10 );
       text("Reject her", 10, (height/2)+20 );
+      //
+      myPort.write('2');
+      //
 
       //generalResultant = false;
     }
@@ -728,6 +755,9 @@ public void analysedImage() {
         fill(255);
         text("And Golden Ratio criterion under this also matches", 10, (height/2)+20 );
         text("Accept her", 10, (height/2)+30 );
+        //
+        myPort.write('3');
+        //
         //generalResultant = true;
       } else if (GR_resultant == false) { // if under age criterion, GR criterion doesn't match
         //give machine a random selection to do
@@ -751,6 +781,9 @@ public void analysedImage() {
           s.write("Accept her" + "\n");
           fill(255);
           text("Accept her", 10, (height/2)+40 );
+          //
+          myPort.write('3');
+          //
           //generalResultant = true;
           w = 0;
         } else {
@@ -760,6 +793,9 @@ public void analysedImage() {
           s.write("Reject her" + "\n");
           fill(255);
           text("Reject her", 10, (height/2)+40 );
+          //
+          myPort.write('2');
+          //
           //generalResultant = false;
         }
       }
@@ -771,6 +807,9 @@ public void analysedImage() {
       fill(255);
       text("Age criterion doesn't matches at the first place", 10, (height/2)+10 );
       text("Reject her", 10, (height/2)+20 );
+      //
+      myPort.write('2');
+      //
       //generalResultant = false;
     }
   }

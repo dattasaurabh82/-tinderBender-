@@ -92,6 +92,14 @@
 		<data>
 		+x0SaYucrNLvSRtPISbciy2yp4E=
 		</data>
+		<key>Java/jssc.jar</key>
+		<data>
+		+2l8Vvq2Gt4LSm5tKTdyWYaj+Q4=
+		</data>
+		<key>Java/jssc.txt</key>
+		<data>
+		oNMgccwbKmCFTlmq4LOmgufSvZk=
+		</data>
 		<key>Java/libcrypto.dylib</key>
 		<data>
 		kVFl8pumq2fA8/sJ4siMoxtzFRA=
@@ -219,6 +227,10 @@
 		<key>Java/libintl.dylib</key>
 		<data>
 		W9DquoQXiJbTBV2Df7WJCcIlvto=
+		</data>
+		<key>Java/libjSSC-2.8.jnilib</key>
+		<data>
+		e62Pi7yGa2wCqoFf4HOBIsgRH40=
 		</data>
 		<key>Java/libjasper.dylib</key>
 		<data>
@@ -904,6 +916,10 @@
 		<data>
 		hpHB8LbhpY2nMEbW6O44HQiWLtE=
 		</data>
+		<key>Java/serial.jar</key>
+		<data>
+		3+xMXyqSnh0pgELHQF2ripYQ4p8=
+		</data>
 		<key>Java/support.jar</key>
 		<data>
 		0nsTIo6Lu643Pm6GldZwhXi6WQU=
@@ -914,7 +930,7 @@
 		</data>
 		<key>Java/tinderBot_101.jar</key>
 		<data>
-		qc/e3MmVQtpIjl1udo6kwcqyS8s=
+		3P6swMvLGcEO8L9+GEENNWW4lhY=
 		</data>
 		<key>Java/video.jar</key>
 		<data>

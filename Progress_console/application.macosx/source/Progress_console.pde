@@ -1,4 +1,6 @@
 import controlP5.*;
+// Import the net libraries
+import java.io.*;
 import processing.net.*;
 
 Client cc;
